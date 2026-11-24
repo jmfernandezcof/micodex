@@ -122,7 +122,8 @@ export function Identificar({ fotoId }) {
           <h1>Paso a paso</h1>
         </header>
         <div class="cuerpo">
-          <p class="nota">Pregunta {paso + 1} de {pendientes.length}</p>
+          {/* Sin total: depende de la primera respuesta («1 de 1» y luego «2 de 4» confundía). */}
+          <p class="nota">Pregunta {paso + 1}</p>
           {paso === 0 && !PREGUNTAS_REVISADAS && <p class="nota">{AVISO_SIN_REVISAR}</p>}
           <h2 class="pregunta">{p.texto}</h2>
           {p.ayuda && <p class="nota">{p.ayuda}</p>}
