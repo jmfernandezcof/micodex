@@ -1,0 +1,34 @@
+{
+  "name": "setas-saceruela",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "PWA de setas y gnomos para las Jornadas Micológicas de Saceruela (27-28 nov 2026). Estática, offline-first.",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "npm run catalogo && npm run gnomos && npm run miniaturas && vite --host 127.0.0.1",
+    "catalogo": "node scripts/catalogo.mjs",
+    "test": "node --test scripts/*.test.mjs",
+    "prebuild": "npm test && npm run catalogo && npm run gnomos && npm run miniaturas",
+    "build": "vite build",
+    "build:publicar": "npm test && PUBLICAR=1 node scripts/catalogo.mjs && npm run gnomos && npm run miniaturas && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4178",
+    "icons": "pwa-assets-generator",
+    "gnomos": "node scripts/gnomos.mjs",
+    "miniaturas": "node scripts/miniaturas.mjs"
+  },
+  "dependencies": {
+    "idb": "8.0.4",
+    "preact": "10.29.8"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "2.10.6",
+    "@vite-pwa/assets-generator": "1.0.4",
+    "sharp": "0.35.5",
+    "vite": "8.3.5",
+    "vite-plugin-pwa": "2.0.0",
+    "workbox-window": "7.4.1"
+  }
+}

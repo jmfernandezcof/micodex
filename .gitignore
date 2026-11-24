@@ -1,0 +1,13 @@
+node_modules/
+dist/
+*.log
+.env
+src/datos/catalogo.json
+src/datos/gnomos-ilustraciones.json
+# Gnomos: maestros PNG sin fondo y JPG originales de Gemini (pesados; solo en el VPS). La app usa public/gnomos/*.webp.
+contenido/gnomos/*.png
+contenido/gnomos/originales/
+# Miniaturas del catálogo: se generan en el build desde public/fotos/ (scripts/miniaturas.mjs).
+public/miniaturas/
+# Anfitrión: maestro PNG sin fondo (la app usa public/anfitrion/*.webp).
+contenido/anfitrion/*.png
